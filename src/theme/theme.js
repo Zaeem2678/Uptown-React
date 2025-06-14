@@ -1,3 +1,4 @@
+import { colors } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
@@ -8,9 +9,9 @@ const theme = createTheme({
     secondary: {
       main: "#4B4B4B",
     },
-     typography: {
-    fontFamily: "Lato, sans-serif",
-  },
+    typography: {
+      fontFamily: "Lato, sans-serif",
+    },
   },
 });
 

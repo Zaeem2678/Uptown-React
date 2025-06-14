@@ -17,7 +17,6 @@ export default function Hero() {
           width: "100%",
           minHeight: "100vh",
           paddingBottom: "160px",
-          marginBottom: "80px",
           overflow: "visible",
           clipPath: "polygon(0% 0%, 100% 0%, 100% 90%, 50% 95%, 0% 90%)",
         }}
