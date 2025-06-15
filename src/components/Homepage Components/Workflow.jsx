@@ -1,6 +1,6 @@
 import HeadingWithLines from "../../components/Homepage Components/HeadingWithLines";
 import { Box, Container, Typography, Paper } from "@mui/material";
-import Stats from "./Stats";
+import WorkflowExtend from "./WorkflowExtend";
 
 export default function Workflow() {
   return (
@@ -67,27 +67,27 @@ export default function Workflow() {
             {[
               {
                 step: "01",
-                title: "Evaluate Property",
+                title: "Analyze Your Requirements",
                 description:
-                  "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+                  "We start by understanding your business goals, identifying your key challenges, and analyzing your technical needs.",
               },
               {
                 step: "02",
-                title: "Meet Your Agent",
+                title: "Design Your Solution",
                 description:
-                  "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+                  "Using our expertise, we craft a tailored solution architecture that best fits your company's unique operations.",
               },
               {
                 step: "03",
-                title: "Close the Deal",
+                title: "Develop and Implement",
                 description:
-                  "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+                  "Our team brings your solution to life with clean code, scalable technologies, and rigorous testing.",
               },
               {
                 step: "04",
-                title: "Have Your Property",
+                title: "Launch and Support",
                 description:
-                  "A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+                  "Once deployed, we provide ongoing support and maintenance, ensuring your platform runs smoothly and evolves alongside your growing business.",
               },
             ].map((item, index) => (
               <Box
@@ -147,78 +147,7 @@ export default function Workflow() {
           </Box>
         </Box>
       </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" }, // Stack vertically on mobile
-          marginLeft: { xs: 0, md: "50px" }, // remove left margin on mobile
-          px: { md: 10 },
-          py: 8,
-          position: "relative", // needed for stacking on desktop
-          gap: { xs: 4, md: 0 }, // spacing between items on mobile
-          marginBottom: "0px",
-        }}
-      >
-        {/* Base Image Card */}
-        <Box
-          sx={{
-            width: { xs: "100%", md: "600px" },
-            height: { xs: "300px", md: "550px" },
-            flexShrink: 0,
-            position: "relative",
-          }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVkJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Stacked Card"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
-        </Box>
-
-        {/* Paper Card */}
-        <Paper
-          elevation={6}
-          sx={{
-            boxShadow: { xs: "none", md: 2 },
-            position: { xs: "static", md: "absolute" },
-            top: { md: "50%" },
-            left: { md: "60%" },
-            transform: { md: "translate(-50%, -50%)" },
-            width: { xs: "100%", md: "40%" },
-            mt: { xs: 2, md: 0 }, // vertical gap on mobile
-            p: 4,
-            borderRadius: 0,
-            backgroundColor: "#fff",
-            zIndex: 2,
-          }}
-        >
-          <Typography variant="h5" fontWeight={600} mb={2}>
-            Discover Your Dream Space
-          </Typography>
-          <Typography variant="body1" fontSize={14} color="text.secondary">
-            A small river named Duden flows by their place and supplies it with
-            the necessary regelialia. It is a paradisematic country, in which
-            roasted parts of sentences fly into your mouth.
-            <br />
-            <br />
-            On her way she met a copy. The copy warned the Little Blind Text,
-            that where it came from it would have been rewritten a thousand
-            times and everything that was left from its origin would be the word
-            "and" and the Little Blind Text should turn around and return to its
-            own, safe country. But nothing the copy said could convince her and
-            so it didn’t take long until a few insidious Copy Writers ambushed
-            her, made her drunk with Longe and Parole and dragged her into their
-            agency, where they abused her for their.
-          </Typography>
-        </Paper>
-      </Box>
-      <Stats/>
+      <WorkflowExtend />
     </>
   );
 }

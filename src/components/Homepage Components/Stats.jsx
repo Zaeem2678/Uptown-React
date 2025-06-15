@@ -12,10 +12,10 @@ export default function Stats() {
       }}
     >
       {[
-        { number: "305", title: "Area", name: "Population" },
-        { number: "1,090", title: "Total", name: "Properties" },
-        { number: "209", title: "Average", name: "House" },
-        { number: "67", title: "Total", name: "Branches" },
+        { number: "3,450", title: "Working", name: "Hours" },
+        { number: "250", title: "Happy", name: "Clients" },
+        { number: "15", title: "Awards", name: "Recieved" },
+        { number: "347", title: "Completed", name: "Projects" },
       ].map((item, index) => (
         <Box
           key={index}

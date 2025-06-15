@@ -24,10 +24,11 @@ const Footer = () => {
           {/* Column 1 - Uptown */}
           <Box sx={{ flex: 1, minWidth: 160 }}>
             <Typography variant="h6" mb={6} gutterBottom>
-              Uptown
+              Ayzenn Tech
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Far far away, behind the word mountains, far from the countries.
+              With Our Skills Put Together, You Get An Ensemble Capable Of Doing
+              Anything And Everything Your Brand Needs.
             </Typography>
             {/* Social media icons */}
             <Box sx={{ mt: 2 }}>
@@ -113,7 +114,8 @@ const Footer = () => {
             >
               <LocationOnIcon color="secondary" />
               <Typography variant="body2">
-                203 Fake St. Mountain View, San Francisco, USA
+                Mini comerical office No 5, Plaza No 13, Near hot & chilli
+                Bahria Town Phase 7, Rawalpindi, 46000
               </Typography>
             </Box>
             <Box
@@ -126,7 +128,7 @@ const Footer = () => {
               }}
             >
               <PhoneIcon color="secondary" />
-              <Typography variant="body2">+2 392 3929 210</Typography>
+              <Typography variant="body2">+92 331 6670557</Typography>
             </Box>
             <Box
               sx={{
@@ -138,7 +140,9 @@ const Footer = () => {
               }}
             >
               <EmailIcon color="secondary" />
-              <Typography variant="body2">info@yourdomain.com</Typography>
+              <Typography variant="body2">
+                official@ayzenntechnologies.com
+              </Typography>
             </Box>
           </Box>
         </Box>
@@ -146,8 +150,7 @@ const Footer = () => {
         {/* Footer bottom */}
         <Box sx={{ mt: 5, textAlign: "center" }}>
           <Typography variant="body2" color="text.secondary">
-            Copyright &copy;2025 All rights reserved | This template is made
-            with ❤️ by Colorlib
+            Copyright &copy;2025 All rights reserved | Ayzenn Technologies
           </Typography>
         </Box>
       </Container>

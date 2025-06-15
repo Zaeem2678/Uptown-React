@@ -56,8 +56,8 @@ export default function Hero() {
                 fontFamily: "'Lato', sans-serif",
               }}
             >
-              The Simplest <br />
-              Way to Find Property
+              Transform Your <br />
+              Vision with Next-Gen Tech Solutions
             </Typography>
             <Typography
               variant="h4"
@@ -66,9 +66,7 @@ export default function Hero() {
                 width: { xs: "100%", sm: "90%", md: "800px" },
               }}
             >
-              A small river named Duden flows by their place and supplies it
-              with the necessary regelialia. It is a paradisematic country, in
-              which roasted parts
+              Leading the Charge in AI, Web, Mobile, and Custom Solutions
             </Typography>
 
             <SearchBar />

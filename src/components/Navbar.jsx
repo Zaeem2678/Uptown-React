@@ -26,8 +26,7 @@ function Navbar() {
     { label: "About", to: "/about" },
     { label: "Agent", to: "/agent" },
     { label: "Services", to: "/services" },
-    { label: "Properties", to: "/properties" },
-    { label: "Blog", to: "/blog" },
+    { label: "Projects", to: "/projects" },
     { label: "Contact", to: "/contact" },
   ];
 
@@ -58,7 +57,7 @@ function Navbar() {
               "&:hover": { color: "#fff" },
             }}
           >
-            UpTown
+            Ayzenn Tech
           </Typography>
 
           {/* Menu Links (Desktop)*/}

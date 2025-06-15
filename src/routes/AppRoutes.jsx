@@ -4,8 +4,7 @@ import About from "../pages/About";
 import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import Agent from "../pages/Agent";
-import Properties from "../pages/Properties";
-import Blog from "../pages/Blog";
+import Projects from "../pages/Projects";
 
 export function AppRoutes() {
   return (
@@ -14,8 +13,7 @@ export function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/agent" element={<Agent />} />
       <Route path="/services" element={<Services />} />
-      <Route path="/properties" element={<Properties />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   );

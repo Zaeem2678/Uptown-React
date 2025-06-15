@@ -6,66 +6,65 @@ export default function Testimonials() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-  const slider = scrollRef.current;
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+    const slider = scrollRef.current;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-  const handleMouseDown = (e) => {
-    isDown = true;
-    slider.classList.add("dragging");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    // Disable text selection
-    document.body.style.userSelect = "none";
-  };
+    const handleMouseDown = (e) => {
+      isDown = true;
+      slider.classList.add("dragging");
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      // Disable text selection
+      document.body.style.userSelect = "none";
+    };
 
-  const handleMouseLeave = () => {
-    isDown = false;
-    slider.classList.remove("dragging");
-    document.body.style.userSelect = "";
-  };
+    const handleMouseLeave = () => {
+      isDown = false;
+      slider.classList.remove("dragging");
+      document.body.style.userSelect = "";
+    };
 
-  const handleMouseUp = () => {
-    isDown = false;
-    slider.classList.remove("dragging");
-    document.body.style.userSelect = "";
-  };
+    const handleMouseUp = () => {
+      isDown = false;
+      slider.classList.remove("dragging");
+      document.body.style.userSelect = "";
+    };
 
-  const handleMouseMove = (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    slider.scrollLeft = scrollLeft - walk;
-  };
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    };
 
-  if (slider) {
-    slider.addEventListener("mousedown", handleMouseDown);
-    slider.addEventListener("mouseleave", handleMouseLeave);
-    slider.addEventListener("mouseup", handleMouseUp);
-    slider.addEventListener("mousemove", handleMouseMove);
-  }
-
-  return () => {
     if (slider) {
-      slider.removeEventListener("mousedown", handleMouseDown);
-      slider.removeEventListener("mouseleave", handleMouseLeave);
-      slider.removeEventListener("mouseup", handleMouseUp);
-      slider.removeEventListener("mousemove", handleMouseMove);
+      slider.addEventListener("mousedown", handleMouseDown);
+      slider.addEventListener("mouseleave", handleMouseLeave);
+      slider.addEventListener("mouseup", handleMouseUp);
+      slider.addEventListener("mousemove", handleMouseMove);
     }
-    // Reset in case user released mouse outside window
-    document.body.style.userSelect = "";
-  };
-}, []);
 
+    return () => {
+      if (slider) {
+        slider.removeEventListener("mousedown", handleMouseDown);
+        slider.removeEventListener("mouseleave", handleMouseLeave);
+        slider.removeEventListener("mouseup", handleMouseUp);
+        slider.removeEventListener("mousemove", handleMouseMove);
+      }
+      // Reset in case user released mouse outside window
+      document.body.style.userSelect = "";
+    };
+  }, []);
 
   const testimonials = [
     {
       logo: "https://www.zoho.com/inventory/case-study/images/maxime-loiselle.jpg",
       heading: "Roger Scott",
       description:
-        "A small river named Duden flows by their place and supplies it with the necessworks perfectly even on smaller cards.",
+        "Working with them feels more like a partnership — they’re as passionate about our project as we are.",
       role: "Marketing Manager",
     },
     {
@@ -93,13 +92,13 @@ export default function Testimonials() {
       logo: "https://www.zoho.com/inventory/case-study/images/maxime-loiselle.jpg",
       heading: "Amira Patel",
       description:
-        "Their professionalism and dedication helped our project succeed on time and under budget.",
+        "We’ve been trusting their expertise for years, and they continue to impress us with their creativity and professionalism.",
       role: "Lead Developer",
     },
   ];
 
   return (
-    <Box sx={{ marginX: { md: "90px", xs: "30px" } }}>
+    <Box sx={{ marginX: { md: "90px", xs: "30px" }, marginBottom: 15 }}>
       <Container
         maxWidth="lg"
         sx={{
