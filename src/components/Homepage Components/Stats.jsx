@@ -1,18 +1,25 @@
 import { Box, Typography } from "@mui/material";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 export default function Stats() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
   return (
     <Box
+      ref={ref}
       sx={{
         marginLeft: { md: "125px", xs: "30px" },
-        marginBottom:15,
+        marginBottom: 15,
         display: "grid",
         gridTemplateColumns: { xs: "1fr", md: "1fr 1fr 1fr 1fr" },
-        gap:{xs:6,md:0}
+        gap: { xs: 6, md: 0 },
       }}
     >
       {[
-        { number: "3,450", title: "Working", name: "Hours" },
+        { number: "3450", title: "Working", name: "Hours" },
         { number: "250", title: "Happy", name: "Clients" },
         { number: "15", title: "Awards", name: "Recieved" },
         { number: "347", title: "Completed", name: "Projects" },
@@ -25,7 +32,16 @@ export default function Stats() {
           }}
         >
           <Typography variant="h3" color="initial">
-            {item.number}
+            {inView ? (
+              <CountUp
+                start={0}
+                end={item.number}
+                duration={2.5}
+                separator=","
+              />
+            ) : (
+              0
+            )}
           </Typography>
           <Box
             sx={{

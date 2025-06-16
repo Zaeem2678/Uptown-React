@@ -21,7 +21,7 @@ function HeadingWithLines({ children, sx = {} }) {
       />
 
       {/* Heading text */}
-      <Typography variant="h6" fontSize={"16px"} component="h2">
+      <Typography variant="h6" fontSize={"18px"} component="h2">
         {children}
       </Typography>
 

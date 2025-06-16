@@ -1,3 +1,11 @@
+import PageNavigation from "../components/pagenav/PageNavigation";
+import Agents from "../components/Homepage Components/Agents";
+
 export default function Agent() {
-  return <div>Agent</div>;
+  return (
+    <>
+      <PageNavigation title="Agent" subheading="agent" />
+      <Agents />
+    </>
+  );
 }

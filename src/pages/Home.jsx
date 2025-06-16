@@ -1,18 +1,52 @@
-import Hero from "../components/Homepage Components/Hero";
+import React, { Suspense } from "react";
 import { Box } from "@mui/material";
-import Workflow from "../components/Homepage Components/Workflow";
-import Testimonials from "../components/Homepage Components/Testimonials";
-import Agents from "../components/Homepage Components/Agents";
-import ServicesComponent from "../components/Homepage Components/ServicesComponent";
+import FadeInSection from "../components/wrapper/FadeInSection";
+
+// Lazy-load components
+const Hero = React.lazy(() => import("../components/Homepage Components/Hero"));
+const ServicesComponent = React.lazy(() =>
+  import("../components/Homepage Components/ServicesComponent")
+);
+const Workflow = React.lazy(() =>
+  import("../components/Homepage Components/Workflow")
+);
+const Testimonials = React.lazy(() =>
+  import("../components/Homepage Components/Testimonials")
+);
+const Agents = React.lazy(() =>
+  import("../components/Homepage Components/Agents")
+);
 
 export default function Home() {
   return (
-    <Box sx={{ overflowX: "hidden" }}>
-      <Hero />
-      <ServicesComponent />
-      <Workflow />
-      <Testimonials />
-      <Agents />
-    </Box>
+    <Suspense
+      fallback={
+        <div style={{ textAlign: "center", padding: "2rem", color: "#000" }}>
+          Loading sections...
+        </div>
+      }
+    >
+      <Box sx={{ overflowX: "hidden" }}>
+        <FadeInSection delay={0.1}>
+          <Hero />
+        </FadeInSection>
+
+        <FadeInSection delay={0.2}>
+          <ServicesComponent />
+        </FadeInSection>
+
+        <FadeInSection delay={0.3}>
+          <Workflow />
+        </FadeInSection>
+
+        <FadeInSection delay={0.4}>
+          <Testimonials />
+        </FadeInSection>
+
+        <FadeInSection delay={0.5}>
+          <Agents />
+        </FadeInSection>
+      </Box>
+    </Suspense>
   );
 }
