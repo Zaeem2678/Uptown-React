@@ -65,20 +65,29 @@ export default function Contact() {
         </Box>
 
         {/* Contact Form Section */}
-        <Typography
+        <Box
           sx={{
-            textAlign: "center",
-            mt: 9,
-            mb: 6,
-            fontSize: "26px",
-            marginX:'30px'
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
-          variant="h6"
-          color="#333333"
         >
-          If you got any questions <br /> please do not hesitate to send us a
-          message
-        </Typography>
+          <Typography
+            sx={{
+              textAlign: "center",
+              mt: 9,
+              mb: 6,
+              fontSize: "26px",
+              width: { xs: "400px", md: "500px" },
+              marginX: "30px",
+            }}
+            variant="h6"
+            color="#333333"
+          >
+            If you got any questions, please do not hesitate to send us a
+            message.
+          </Typography>
+        </Box>
 
         <Box
           sx={{
