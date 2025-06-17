@@ -1,8 +1,13 @@
 import { Box, Typography, Container } from "@mui/material";
 import Navbar from "../../components/Navbar";
 import SearchBar from "../../components/Homepage Components/SearchBar";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
+  function handleScrollToProjects() {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <>
       <Box
@@ -17,7 +22,7 @@ export default function Hero() {
           width: "100%",
           minHeight: "100vh",
           paddingBottom: "160px",
-          overflow: "visible",
+          overflow: "hidden",
           clipPath: "polygon(0% 0%, 100% 0%, 100% 90%, 50% 95%, 0% 90%)",
         }}
       >
@@ -56,8 +61,15 @@ export default function Hero() {
                 fontFamily: "'Lato', sans-serif",
               }}
             >
-              Transform Your <br />
-              Vision with Next-Gen Tech Solutions
+              <Typewriter
+                words={["Transform Your Vision with Next-Gen Tech Solutions"]}
+                loop={1}
+                cursor
+                cursorStyle=""
+                typeSpeed={60}
+                deleteSpeed={0}
+                delaySpeed={2000}
+              />
             </Typography>
             <Typography
               variant="h4"
@@ -76,9 +88,10 @@ export default function Hero() {
 
       {/* The circle is placed outside the clipping box */}
       <Box
+        onClick={handleScrollToProjects}
         sx={{
           position: "absolute",
-          bottom: "-30%", // circle is 5% above bottom of clipping
+          bottom: "6%", // circle is 5% above bottom of clipping
           transform: "translateX(-60%) translateY(50%)",
 
           left: "50%",

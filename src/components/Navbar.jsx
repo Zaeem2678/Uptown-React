@@ -24,7 +24,7 @@ function Navbar() {
   const links = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
-    { label: "Agent", to: "/agent" },
+    { label: "Team", to: "/agent" },
     { label: "Services", to: "/services" },
     { label: "Projects", to: "/projects" },
     { label: "Contact", to: "/contact" },
@@ -35,8 +35,9 @@ function Navbar() {
       <AppBar
         position="static"
         color="#fff"
+        
         elevation={0}
-        sx={{ boxShadow: "none", borderBottom: "none", py: 4, px: 7 }}
+        sx={{ boxShadow: "none",bgcolor:'#000000', borderBottom: "none", py: 2, px: 7 }}
       >
         <Box
           sx={{
@@ -46,19 +47,17 @@ function Navbar() {
           }}
         >
           {/* Company Name */}
-          <Typography
-            variant="h6"
+          <Box
             component={Link}
-            color="inherit"
             to="/"
-            sx={{
-              textDecoration: "none",
-              fontWeight: "bold",
-              "&:hover": { color: "#fff" },
-            }}
-          >
-            Ayzenn Tech
-          </Typography>
+            sx={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <img
+              src="https://www.ayzenntechnologies.com/img/ayzen.png"
+              alt="Ayzenn Tech Logo"
+              style={{ height: "40px" }} // adjust size if needed
+            />
+          </Box>
+
 
           {/* Menu Links (Desktop)*/}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
@@ -70,8 +69,8 @@ function Navbar() {
                 sx={{
                   textTransform: "none",
                   color:
-                    location.pathname === item.to ? "primary.main" : "inherit",
-                  "&:hover": { color: "primary.main", bgcolor: "#fff" },
+                    location.pathname === item.to ? "#FBA505" : "#fff",
+                  "&:hover": { color: "#FBA505",  },
                 }}
               >
                 {item.label}

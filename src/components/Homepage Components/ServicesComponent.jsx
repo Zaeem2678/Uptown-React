@@ -1,12 +1,14 @@
 import { Box, Container, Typography } from "@mui/material";
 import HeadingWithLines from "../../components/Homepage Components/HeadingWithLines";
 import PropertyList from "../../components/Homepage Components/PropertyList";
+import ProjectsComponent from "../ProjectsComponent";
 
 export default function ServicesComponent() {
   return (
     <Box
       sx={{
         marginX: "60px",
+        marginBottom: 20,
       }}
     >
       <Container
@@ -23,13 +25,13 @@ export default function ServicesComponent() {
         <Typography
           variant="h2"
           sx={{
-            fontSize: { xs: "32px", sm: "36px", md: "18px" },
+            fontSize: { xs: "32px", sm: "36px", md: "17px" },
             width: { xs: "100%", sm: "90%", md: "580px" },
-            color: "#000000",
+            color: "#4F4F4F",
             lineHeight: 1.1,
             textAlign: "center",
-            fontWeight: 500,
-            fontFamily: "'Lato', sans-serif",
+            fontWeight: 300,
+            fontFamily: " sans-serif",
           }}
         >
           We possess a diverse range of skills, including web development,
@@ -103,33 +105,36 @@ export default function ServicesComponent() {
           </Box>
         ))}
       </Box>
-      <Container
-        maxWidth="lg"
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          marginBottom: "80px",
-          textAlign: "center",
-        }}
-      >
-        <HeadingWithLines>What we offer</HeadingWithLines>
-        <Typography
-          variant="h2"
+      <Box>
+        <Container
+          maxWidth="lg"
           sx={{
-            fontSize: { xs: "32px", sm: "36px", md: "39px" },
-            width: { xs: "100%", sm: "90%", md: "580px" },
-            color: "#000000",
-            lineHeight: 1.1,
-            fontWeight: 500,
-            fontFamily: "'Lato', sans-serif",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "40px",
+            textAlign: "center",
           }}
         >
-          Exclusive Offer For You
-        </Typography>
-      </Container>
-      <PropertyList />
+          <Box id="projects"></Box>
+          <HeadingWithLines>Our Projects</HeadingWithLines>
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: "32px", sm: "36px", md: "39px" },
+              width: { xs: "100%", sm: "90%", md: "580px" },
+              color: "#000000",
+              lineHeight: 1.1,
+              fontWeight: 500,
+              fontFamily: "'Lato', sans-serif",
+            }}
+          >
+            Recently Completed Projects
+          </Typography>
+        </Container>
+        <ProjectsComponent />
+      </Box>
     </Box>
   );
 }

@@ -20,7 +20,7 @@ export default function Agents() {
           textAlign: "center",
         }}
       >
-        <HeadingWithLines>Agents</HeadingWithLines>
+        <HeadingWithLines>Our Team</HeadingWithLines>
         <Typography
           variant="h2"
           sx={{
@@ -33,7 +33,7 @@ export default function Agents() {
             fontFamily: "'Lato', sans-serif",
           }}
         >
-          Our Agents
+          Our Team Members
         </Typography>
       </Container>
       <TeamMemberList />

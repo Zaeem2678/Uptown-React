@@ -21,9 +21,9 @@ const teamMembers = [
   },
   {
     id: 4,
-    image: "https://www.ayzenntechnologies.com/img/adan.jpeg",
-    name: "Adan Shah",
-    role: "Full Stack Intern",
+    image: "./shahbaz.jpeg",
+    name: "Shahbaz Hanif",
+    role: "Full Stack Developer",
   },
   {
     id: 5,
@@ -35,13 +35,23 @@ const teamMembers = [
     id: 6,
     image: "./zaeem.jpeg",
     name: "Zaeem Hussain",
-    role: "React Developer",
+    role: "Front-End Developer",
   },
   // You can add more team members here
 ];
 
 const TeamMemberCard = ({ member }) => (
-  <Box position="relative" width="100%">
+  <Box
+    position="relative"
+    width="100%"
+    sx={{
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+      "&:hover": {
+        transform: "translateY(-10px)",
+        boxShadow: 6,
+      },
+    }}
+  >
     <Card sx={{ borderRadius: 0, overflow: "hidden", width: "100%" }}>
       <CardMedia
         component="img"
@@ -50,6 +60,7 @@ const TeamMemberCard = ({ member }) => (
         sx={{
           objectFit: "cover",
           width: "100%",
+          height: { md: "380px", xs: "700px" },
           aspectRatio: "1/1", // <- maintains a square box across all devices
         }}
       />

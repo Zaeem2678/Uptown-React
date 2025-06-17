@@ -14,12 +14,12 @@ export default function Contact() {
             flexDirection: { xs: "column", md: "row" },
             alignItems: "center",
             justifyContent: "center",
-            gap: 1,
+            gap: { md: 7, xs: 1 },
             padding: 4,
           }}
         >
           {/* Address Section */}
-          <Box sx={{ textAlign: "center", flex: 1 }}>
+          <Box sx={{ textAlign: "center" }}>
             <Typography variant="h6">Address:</Typography>
             <Typography color="text.secondary">
               198 West 21th Street, Suite 721
@@ -35,12 +35,11 @@ export default function Contact() {
             sx={{
               width: "1px",
               backgroundColor: "grey.400",
-              my: { xs: 2, md: 0 },
             }}
           />
 
           {/* Phone Section */}
-          <Box sx={{ textAlign: "center", flex: 1 }}>
+          <Box sx={{ textAlign: "center" }}>
             {/* icon can go here*/}
             <Typography variant="h6">Phone:</Typography>
             <Typography color="text.secondary">+ 1235 2355 98</Typography>
@@ -51,15 +50,14 @@ export default function Contact() {
             orientation="vertical"
             flexItem
             sx={{
-              alignSelf: "stretch",
+              height: { md: 120, xs: "none" },
               width: "1px",
               backgroundColor: "grey.400",
-              my: { xs: 2, md: 0 },
             }}
           />
 
           {/* Email Section */}
-          <Box sx={{ textAlign: "center", flex: 1 }}>
+          <Box sx={{ textAlign: "center" }}>
             {/* icon can go here*/}
             <Typography variant="h6">Email:</Typography>
             <Typography color="text.secondary">info@yoursite.com</Typography>

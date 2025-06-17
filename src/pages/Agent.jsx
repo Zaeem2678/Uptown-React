@@ -4,7 +4,7 @@ import Agents from "../components/Homepage Components/Agents";
 export default function Agent() {
   return (
     <>
-      <PageNavigation title="Agent" subheading="agent" />
+      <PageNavigation title="Team" subheading="team" />
       <Agents />
     </>
   );
