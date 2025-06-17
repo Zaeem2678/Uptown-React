@@ -60,7 +60,7 @@ const TeamMemberCard = ({ member }) => (
         sx={{
           objectFit: "cover",
           width: "100%",
-          height: { md: "380px", xs: "700px" },
+          height: { md: "370px", xs: "490px" },
           aspectRatio: "1/1", // <- maintains a square box across all devices
         }}
       />

@@ -35,9 +35,14 @@ function Navbar() {
       <AppBar
         position="static"
         color="#fff"
-        
         elevation={0}
-        sx={{ boxShadow: "none",bgcolor:'#000000', borderBottom: "none", py: 2, px: 7 }}
+        sx={{
+          boxShadow: "none",
+          bgcolor: "#000000",
+          borderBottom: "none",
+          py: 2,
+          px: 4,
+        }}
       >
         <Box
           sx={{
@@ -50,14 +55,18 @@ function Navbar() {
           <Box
             component={Link}
             to="/"
-            sx={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            sx={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <img
               src="https://www.ayzenntechnologies.com/img/ayzen.png"
               alt="Ayzenn Tech Logo"
               style={{ height: "40px" }} // adjust size if needed
             />
           </Box>
-
 
           {/* Menu Links (Desktop)*/}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
@@ -68,9 +77,8 @@ function Navbar() {
                 to={item.to}
                 sx={{
                   textTransform: "none",
-                  color:
-                    location.pathname === item.to ? "#FBA505" : "#fff",
-                  "&:hover": { color: "#FBA505",  },
+                  color: location.pathname === item.to ? "#FBA505" : "#fff",
+                  "&:hover": { color: "#FBA505" },
                 }}
               >
                 {item.label}
@@ -85,7 +93,7 @@ function Navbar() {
             onClick={handleDrawerOpen}
             sx={{ display: { xs: "flex", md: "none" } }}
           >
-            <MenuIcon />
+             <MenuIcon sx={{ color: "white" }} />
           </IconButton>
         </Box>
       </AppBar>

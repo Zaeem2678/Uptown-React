@@ -66,7 +66,13 @@ export default function Contact() {
 
         {/* Contact Form Section */}
         <Typography
-          sx={{ textAlign: "center", mt: 9, mb: 6, fontSize: "26px" }}
+          sx={{
+            textAlign: "center",
+            mt: 9,
+            mb: 6,
+            fontSize: "26px",
+            marginX:'30px'
+          }}
           variant="h6"
           color="#333333"
         >

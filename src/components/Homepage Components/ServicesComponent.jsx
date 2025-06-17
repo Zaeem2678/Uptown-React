@@ -1,6 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
 import HeadingWithLines from "../../components/Homepage Components/HeadingWithLines";
-import PropertyList from "../../components/Homepage Components/PropertyList";
 import ProjectsComponent from "../ProjectsComponent";
 
 export default function ServicesComponent() {
@@ -25,7 +24,7 @@ export default function ServicesComponent() {
         <Typography
           variant="h2"
           sx={{
-            fontSize: { xs: "32px", sm: "36px", md: "17px" },
+            fontSize: { xs: "12px", sm: "16px", md: "17px" },
             width: { xs: "100%", sm: "90%", md: "580px" },
             color: "#4F4F4F",
             lineHeight: 1.1,
@@ -122,7 +121,7 @@ export default function ServicesComponent() {
           <Typography
             variant="h2"
             sx={{
-              fontSize: { xs: "32px", sm: "36px", md: "39px" },
+              fontSize: { xs: "20px", sm: "25px", md: "26px" },
               width: { xs: "100%", sm: "90%", md: "580px" },
               color: "#000000",
               lineHeight: 1.1,

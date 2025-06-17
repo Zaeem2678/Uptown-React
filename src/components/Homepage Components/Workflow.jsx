@@ -18,7 +18,7 @@ export default function Workflow() {
         <Box
           sx={{
             bgcolor: "#000000",
-            height: { md: "850px", xs: "1200px" },
+            height: { md: "850px", xs: "1400px" },
             padding: 4,
             width: { xs: "100%", md: "50%" },
           }}

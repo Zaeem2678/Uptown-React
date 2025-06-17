@@ -17,17 +17,23 @@ function HeadingWithLines({ children, sx = {} }) {
     >
       {/* Left line */}
       <Box
-        sx={{ height: "2px", background: "#EA7AD4", mr: 2, width: "100px" }}
+        sx={{ height: "2px", background: "#EA7AD4", mr: 2, width: {md:"100px",xs:'30px'} }}
       />
 
       {/* Heading text */}
-      <Typography variant="h6" fontSize={"18px"} component="h2">
+      <Typography
+        variant="h6"
+        sx={{
+          fontSize: { xs: "14px", md: "18px" },
+        }}
+        component="h2"
+      >
         {children}
       </Typography>
 
       {/* Right line */}
       <Box
-        sx={{ height: "2px", background: "#EA7AD4", ml: 2, width: "100px" }}
+        sx={{ height: "2px", background: "#EA7AD4", ml: 2, width: {md:"100px",xs:'30px'} }}
       />
     </Box>
   );

@@ -7,12 +7,12 @@ export default function Projects() {
   return (
     <>
       <Pagenavigation title="Projects" subheading={"projects"} />
-      <Box sx={{ py: 3, bgcolor: "#fff",mb:10 }}>
+      <Box sx={{ py: 3, bgcolor: "#fff", mb: 10 }}>
         <Container maxWidth="lg">
           {/* Section Header */}
           <Box textAlign="center" mb={6}>
             <HeadingWithLines>Our Projects</HeadingWithLines>
-            <Typography variant="h4" sx={{ fontWeight: "bold", color: "#000" }}>
+            <Typography variant="h6" sx={{ fontWeight: "bold", color: "#000" }}>
               Recently Completed Projects
             </Typography>
           </Box>
