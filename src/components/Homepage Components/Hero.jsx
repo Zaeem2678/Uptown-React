@@ -14,8 +14,7 @@ export default function Hero() {
         sx={{
           position: "relative",
           backgroundImage: `
-            linear-gradient(to bottom, #fff 0%, rgb(255, 255, 255, 0) 80%),
-            url(https://preview.colorlib.com/theme/uptown/images/bg_1.jpg.webp)`,
+            url(/test.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -55,7 +54,7 @@ export default function Hero() {
               sx={{
                 fontSize: { xs: "32px", sm: "48px", md: "63px" },
                 width: { xs: "100%", sm: "90%", md: "580px" },
-                color: "#000000",
+                color: "#fff",
                 lineHeight: 1.1,
                 fontWeight: 300,
                 fontFamily: "'Lato', sans-serif",
@@ -74,6 +73,7 @@ export default function Hero() {
             <Typography
               variant="h4"
               sx={{
+                color:'#fff',
                 fontSize: { xs: "16px", sm: "18px" },
                 width: { xs: "100%", sm: "90%", md: "800px" },
               }}

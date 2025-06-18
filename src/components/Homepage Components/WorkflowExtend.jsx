@@ -26,7 +26,7 @@ export default function WorkflowExtend() {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVkJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D"
+            src="./laptop.jpg"
             alt="Stacked Card"
             style={{
               width: "100%",

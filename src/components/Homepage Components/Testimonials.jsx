@@ -61,40 +61,28 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      logo: "https://www.zoho.com/inventory/case-study/images/maxime-loiselle.jpg",
-      heading: "Roger Scott",
+      logo: "https://www.ayzenntechnologies.com/img/testimonial-1.jpg",
+      heading: "Mr. Bilal Sr. Manager",
       description:
-        "Working with them feels more like a partnership — they’re as passionate about our project as we are.",
-      role: "Marketing Manager",
+        "We engaged Ayzenn Technologies to develop an AI-based system for our quality assurance. They are highly professional, and their team is exceptionally skilled.",
+      role: "Nayatel",
     },
     {
-      logo: "https://www.zoho.com/inventory/case-study/images/maxime-loiselle.jpg",
-      heading: "Samantha Lee",
+      logo: "https://www.ayzenntechnologies.com/img/testimonial-3.jpg",
+      heading: "Jacob",
       description:
-        "We've been working with this team for years now, and it's always a pleasure. They go above and beyond every time.",
-      role: "Product Designer",
+        "Partnering with Ayzenn Technologies, we successfully delivered several projects in South Korea, including work for the Korean government. Their expertise is remarkable.",
     },
     {
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9g15s85WmTKLSjitkyevXySYGSgKZj6gJmA&s",
-      heading: "Michael Chen",
+      heading: "Mohammad Hassan",
       description:
-        "Their approach is detailed, insightful, and genuinely client-focused. Highly recommended!",
-      role: "CTO, TechCorp",
+        "We've collaborated with Ayzenn Technologies on multiple projects. Their professionalism stands out, and their work on Rapid Engine was excellent."
+              ,
+      role: "Rapid Engine",
     },
-    {
-      logo: "https://www.zoho.com/inventory/case-study/images/maxime-loiselle.jpg",
-      heading: "Amira Patel",
-      description:
-        "Their professionalism and dedication helped our project succeed on time and under budget.",
-      role: "Lead Developer",
-    },
-    {
-      logo: "https://www.zoho.com/inventory/case-study/images/maxime-loiselle.jpg",
-      heading: "Amira Patel",
-      description:
-        "We’ve been trusting their expertise for years, and they continue to impress us with their creativity and professionalism.",
-      role: "Lead Developer",
-    },
+    
+    
   ];
 
   return (

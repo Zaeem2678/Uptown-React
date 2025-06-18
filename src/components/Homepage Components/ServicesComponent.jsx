@@ -6,7 +6,7 @@ export default function ServicesComponent() {
   return (
     <Box
       sx={{
-        marginX: "60px",
+        marginX: {md:"60px",xs:'40px'},
         marginBottom: 20,
       }}
     >
