@@ -14,7 +14,7 @@ export default function Hero() {
         sx={{
           position: "relative",
           backgroundImage: `
-            url(/test.jpg)`,
+            url(/test-min.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
