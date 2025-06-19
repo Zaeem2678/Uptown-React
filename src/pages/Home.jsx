@@ -27,9 +27,7 @@ export default function Home() {
       }
     >
       <Box sx={{ overflowX: "hidden" }}>
-        <FadeInSection delay={0.1}>
-          <Hero />
-        </FadeInSection>
+        <Hero />
 
         <FadeInSection delay={0.2}>
           <ServicesComponent />

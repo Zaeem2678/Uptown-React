@@ -1,45 +1,59 @@
 import { Box, Typography, IconButton, useMediaQuery } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
+// Projects with category
 const projects = [
   {
     title: "ToneSync AI",
     image: "https://www.ayzenntechnologies.com/img/Tonesync.png",
     description: "AI-powered music creation tool for artists and producers.",
+    category: "web",
   },
   {
     title: "MedVox AI",
     image: "https://www.ayzenntechnologies.com/img/medvox.png",
     description: "Virtual health assistant improving patient experience.",
+    category: "mobile",
   },
   {
     title: "Chatzyr - Global Chat",
     image: "https://www.ayzenntechnologies.com/img/Chatzyr.png",
     description: "Global chat platform for instant messaging and groups.",
+    category: "mobile",
   },
   {
     title: "Shakeel Corporation",
     image: "https://www.ayzenntechnologies.com/img/ShakeelCorporation.png",
     description: "Official business site for Shakeel Corporation.",
+    category: "web",
   },
   {
     title: "Dealer Auctions UK",
     image: "https://www.ayzenntechnologies.com/img/dealerauction.png",
     description: "Buy and sell vehicles via trusted UK auction houses.",
+    category: "web",
   },
   {
     title: "Shelf: App Curator",
     image: "https://www.ayzenntechnologies.com/img/ShelfApp.PNG",
     description: "Smart app recommendations tailored to your needs.",
+    category: "mobile",
   },
 ];
 
 export default function ProjectsComponent() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const cardsPerView = isMobile ? 1 : 3;
+
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const maxIndex = projects.length - cardsPerView;
+  const filteredProjects =
+    selectedCategory === "all"
+      ? projects
+      : projects.filter((p) => p.category === selectedCategory);
+
+  const maxIndex = Math.max(filteredProjects.length - cardsPerView, 0);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
@@ -49,17 +63,47 @@ export default function ProjectsComponent() {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
+  // Reset index when filter changes
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [selectedCategory, cardsPerView]);
+
   return (
     <>
       {/* Filter Section */}
       <Box sx={{ textAlign: "center", mb: 6 }}>
-        <Typography component="span" sx={{ color: "#FBA504", fontWeight: "bold", mr: 3, cursor: "pointer", borderBottom: "2px solid #FBA504" }}>All</Typography>
-        <Typography component="span" sx={{ mx: 3, color: "#333", cursor: "pointer" }}>Web Applications</Typography>
-        <Typography component="span" sx={{ color: "#333", cursor: "pointer" }}>Mobile Applications</Typography>
+        {["all", "web", "mobile"].map((category) => (
+          <Typography
+            key={category}
+            component="span"
+            onClick={() => setSelectedCategory(category)}
+            sx={{
+              color: selectedCategory === category ? "#FBA504" : "#333",
+              fontWeight: selectedCategory === category ? "bold" : "normal",
+              mx: 3,
+              cursor: "pointer",
+              borderBottom:
+                selectedCategory === category ? "2px solid #FBA504" : "none",
+            }}
+          >
+            {category === "all"
+              ? "All"
+              : category === "web"
+              ? "Web Applications"
+              : "Mobile Applications"}
+          </Typography>
+        ))}
       </Box>
 
       {/* Slider Container */}
-      <Box sx={{ position: "relative", width: "100%", maxWidth: "1200px", mx: "auto" }}>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          maxWidth: "1200px",
+          mx: "auto",
+        }}
+      >
         {/* Left Arrow */}
         <IconButton
           onClick={prevSlide}
@@ -85,7 +129,12 @@ export default function ProjectsComponent() {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </Box>
         </IconButton>
 
@@ -114,7 +163,12 @@ export default function ProjectsComponent() {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </Box>
         </IconButton>
 
@@ -124,15 +178,17 @@ export default function ProjectsComponent() {
             sx={{
               display: "flex",
               transition: "transform 0.5s ease-in-out",
-              width: `${(projects.length * 100) / cardsPerView}%`,
-              transform: `translateX(-${(currentIndex * 100) / projects.length}%)`,
+              width: `${(filteredProjects.length * 100) / cardsPerView}%`,
+              transform: `translateX(-${
+                (currentIndex * 100) / filteredProjects.length
+              }%)`,
             }}
           >
-            {projects.map((project, idx) => (
+            {filteredProjects.map((project, idx) => (
               <Box
                 key={idx}
                 sx={{
-                  width: `${100 / projects.length}%`,
+                  width: `${100 / filteredProjects.length}%`,
                   px: 2,
                   flexShrink: 0,
                 }}
@@ -182,6 +238,7 @@ function HoverCard({ project }) {
         sx={{
           position: "absolute",
           inset: 0,
+          height: "280px",
           display: "flex",
           flexDirection: "column",
           alignItems: "flex-start",
@@ -203,6 +260,7 @@ function HoverCard({ project }) {
           alt={project.title}
           sx={{
             width: "100%",
+            marginBottom: "20px",
             height: "180px",
             objectFit: "cover",
             borderRadius: "4px",

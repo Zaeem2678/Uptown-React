@@ -38,12 +38,11 @@ export default function ServicesComponent() {
           marketing.
         </Typography>
       </Container>
+
       <Box
         sx={{
           mb: 11,
-
           display: "grid",
-
           gridTemplateColumns: {
             xs: "1fr",
             md: "repeat(4, 1fr)",
@@ -56,54 +55,103 @@ export default function ServicesComponent() {
             logo: "https://cdn-icons-png.flaticon.com/512/14596/14596998.png",
             heading: "Web App Development",
             description:
-              "We offer full-stack web development services for businesses of all sizes. Our solutions cover everything from engaging designs to smooth deployment. With our expertise, we build visually appealing and user-friendly websites. These enhance your brand's online presence and promote growth. Let us turn your vision into reality with our all-in-one web development services.",
+              "We offer full-stack web development services for businesses of all sizes...",
           },
           {
             logo: "https://media.istockphoto.com/id/1423550966/vector/profit-rounded-lines-icon.jpg?s=612x612&w=0&k=20&c=_KFEK2PUIlquKGVUYQ18I2rO6xQ3ieFDEx-xHpXRLTI=",
             heading: "Mobile App Development",
             description:
-              "Our mobile app development services help businesses create high-performance apps for Android. We focus on user-centric experiences and seamless interfaces that engage users. Whether you need a customer app or an internal tool, we ensure your mobile solution fits your needs. From concept to launch, we offer complete services that guarantee functionality.",
+              "Our mobile app development services help businesses create high-performance apps...",
           },
           {
             logo: "https://static.vecteezy.com/system/resources/previews/047/567/824/non_2x/suggestion-icon-logo-sign-outline-vector.jpg",
             heading: "AI Development",
             description:
-              "Share your business challenges and ideas, and we will create digital solutions. We aim to understand your needs and provide tailored solutions that improve your processes and boost success. Trust us to turn your concepts into effective solutions that increase efficiency and keep you competitive in the fast-changing digital landscape. You will surpass your own expectations.",
+              "Share your business challenges and ideas, and we will create digital solutions...",
           },
           {
             logo: "https://cdn-icons-png.flaticon.com/512/5272/5272442.png",
             heading: "Management Systems",
             description:
-              "We create management systems to simplify your business operations, like in hospitals and banks. Our solutions manage inventory, staff, performance tracking, and reporting. They boost productivity, cut down manual tasks, and offer real-time insights. This helps your organization run smoothly and efficiently.",
+              "We create management systems to simplify your business operations...",
           },
-        ].map((item, index) => (
-          <Box key={index} sx={{ p: 2, textAlign: "center" }}>
+        ].map((item, index) => {
+          const hoverColors = ["#4CAF50", "#F44336", "#2196F3", "#FF9800"]; // green, red, blue, orange
+
+          return (
             <Box
-              component="img"
-              src={item.logo}
-              alt={`${item.heading} logo`}
-              sx={{ width: 100, height: 100, mb: 2, margin: "0 auto" }}
-            ></Box>
-
-            {/* Heading */}
-            <Typography
+              key={index}
               sx={{
-                mb: "10px",
-                fontWeight: "bold",
+                p: 2,
+                textAlign: "center",
+                borderRadius: 2,
+                transition: "all 0.3s ease-in-out",
+                "&:hover": {
+                  backgroundColor: hoverColors[index % hoverColors.length],
+                  color: "white",
+                  transform: "translateY(-5px)",
+                  boxShadow: 3,
+                },
+                "&:hover .bubble": {
+                  opacity: 1,
+                  transform: "scale(1.5)",
+                },
               }}
-              variant="h6"
-              component="h2"
             >
-              {item.heading}
-            </Typography>
-
-            {/* Description */}
-            <Typography color="#4F4F4F" variant="body2">
-              {item.description}
-            </Typography>
-          </Box>
-        ))}
+              <Box
+                className="bubble"
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  width: 120,
+                  height: 120,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(255,255,255,0.3)",
+                  opacity: 0,
+                  transform: "scale(0)",
+                  transition: "all 0.5s ease",
+                  zIndex: 1,
+                }}
+              />
+              {/* Bottom Left Bubble */}
+              <Box
+                className="bubble"
+                sx={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  width: 120,
+                  height: 120,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(255,255,255,0.2)",
+                  opacity: 0,
+                  transform: "scale(0)",
+                  transition: "all 0.5s ease",
+                  zIndex: 1,
+                }}
+              />
+              <Box
+                component="img"
+                src={item.logo}
+                alt={`${item.heading} logo`}
+                sx={{ width: 100, height: 100, mb: 2, margin: "0 auto" }}
+              />
+              <Typography
+                sx={{ mb: "10px", fontWeight: "bold" }}
+                variant="h6"
+                component="h2"
+              >
+                {item.heading}
+              </Typography>
+              <Typography color="#4F4F4F" variant="body2">
+                {item.description}
+              </Typography>
+            </Box>
+          );
+        })}
       </Box>
+
       <Box>
         <Container
           maxWidth="lg"

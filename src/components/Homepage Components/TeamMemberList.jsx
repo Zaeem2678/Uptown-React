@@ -48,11 +48,11 @@ const TeamMemberCard = ({ member }) => (
       transition: "transform 0.3s ease, box-shadow 0.3s ease",
       "&:hover": {
         transform: "translateY(-10px)",
-        boxShadow: 6,
+        boxShadow: 1,
       },
     }}
   >
-    <Card sx={{ borderRadius: 0, overflow: "hidden", width: "100%" }}>
+    <Card sx={{ borderRadius: "50%", overflow: "hidden", width: "100%" }}>
       <CardMedia
         component="img"
         image={member.image}
@@ -60,7 +60,7 @@ const TeamMemberCard = ({ member }) => (
         sx={{
           objectFit: "cover",
           width: "100%",
-          height: { md: "370px", xs: "490px" },
+          height: { md: "370px", xs: "690px" },
           aspectRatio: "1/1", // <- maintains a square box across all devices
         }}
       />

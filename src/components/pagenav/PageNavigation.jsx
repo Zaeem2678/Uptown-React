@@ -1,6 +1,7 @@
 import Container from "@mui/material/Container";
 import { Box, Typography } from "@mui/material";
 import Navbar from "../Navbar";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Pagenavigation({ title, subheading }) {
   return (
@@ -39,18 +40,24 @@ export default function Pagenavigation({ title, subheading }) {
           <Typography
             variant="h1"
             sx={{
-              fontSize: "18px",
+              fontSize: "20px",
               width: { xs: "100%", sm: "90%", md: "580px" },
               color: "rgba(0, 0, 0, 0.7);",
               textTransform: "uppercase",
               lineHeight: 1.1,
-
+              fontWeight: "bold",
               fontFamily: "'Lato', sans-serif",
             }}
           >
-            Home{">   "}
-            {subheading}
-            {">"}
+            <Typewriter
+              words={[`Home > ${subheading} >`]}
+              loop={1}
+              cursor
+              cursorStyle=""
+              typeSpeed={60}
+              deleteSpeed={0}
+              delaySpeed={2000}
+            />
           </Typography>
           <Typography
             variant="h4"
@@ -61,7 +68,15 @@ export default function Pagenavigation({ title, subheading }) {
               mt: 2,
             }}
           >
-            {title}
+            <Typewriter
+              words={[`${title}`]}
+              loop={1}
+              cursor
+              cursorStyle=""
+              typeSpeed={60}
+              deleteSpeed={0}
+              delaySpeed={2000}
+            />
           </Typography>
         </Container>
       </Box>
